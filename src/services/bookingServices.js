@@ -29,15 +29,14 @@ const bookingServices = {
             throw new Error(error.response?.data?.error || "Failed to Fetch Bookings")
         }
     },
-    updateBooking: async (id) => {
+    updateBooking: async (id, data) => {
         try {
-            const response = await protectedInstance.put(`/bookings/${id}`)
-            return response.data
+          const response = await protectedInstance.put(`/bookings/${id}`, data);
+          return response.data;
+        } catch (error) {
+          throw new Error(error.response?.data?.message || 'Failed to update booking');
         }
-        catch (error) {
-            throw new Error(error.response?.data?.error || "Failed to Update")
-        }
-    },
+      },
     deleteBooking: async (id) => {
         try {
             const response = await protectedInstance.delete(`/bookings/${id}`)

@@ -26,12 +26,14 @@ const userServices = {
       throw new Error(error.response.data.error || 'Failed to login user');
     }
   },
-  getProfile: async (id) => {
+  getProfile : async () => {
     try {
-      if (!id) {
+      const storedId = localStorage.getItem('userId');
+      console.log(storedId)
+      if (!storedId) {
         throw new Error('Profile id is not defined');
       }
-      const response = await protectedInstance.get(`/users/profile/${id}`);
+      const response = await protectedInstance.get(`/users/profile/${storedId}`);
       return response.data;
     } catch (error) {
       throw new Error(error.response?.data?.error || 'Failed to get user profile');

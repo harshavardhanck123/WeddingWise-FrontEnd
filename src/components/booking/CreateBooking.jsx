@@ -55,7 +55,6 @@ const CreateBooking = () => {
 
   return (
     <div>
-      <h2 className="create-booking-heading">Create Booking</h2>
       <div className="create-booking-container">
         <form onSubmit={handleSubmit} className="booking-form">
           <div>

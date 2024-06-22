@@ -7,23 +7,29 @@ const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('');
+  const [selectedRole, setSelectedRole] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    userServices.register(name, email, password, role)
+    userServices.register(name, email, password, selectedRole)
       .then(response => {
         alert('Registration Successful');
 
         setName('');
         setEmail('');
         setPassword('');
-        setRole('');
+        setSelectedRole('');
+        setError('');
 
         setTimeout(() => {
           navigate('/login');
         }, 3000);
+      })
+      .catch(error => {
+        setError('Registration Failed');
+        console.error('Error registering user:', error);
       });
   };
 
@@ -66,16 +72,20 @@ const Register = () => {
         </div>
         <div className="form-group">
           <label>Role:</label>
-          <input
-            type="text"
+          <select
             name="role"
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
+            value={selectedRole}
+            onChange={(e) => setSelectedRole(e.target.value)}
             required
             className="form-control"
-          />
+          >
+            <option value="">Select Role</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
         </div>
         <button type="submit" className="btn btn-primary btn-block">Register</button>
+        {error && <p className="error-message">{error}</p>}
       </form>
     </div>
   );

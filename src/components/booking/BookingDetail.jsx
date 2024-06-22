@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import bookingServices from '../../services/bookingServices';
 import { useParams } from 'react-router-dom';
-import '../../styles/BookingDetail.css'
+import { Spinner } from 'react-bootstrap';
+import bookingServices from '../../services/bookingServices';
+import '../../styles/BookingDetail.css';
 
 const BookingDetail = () => {
-  const [booking, setBooking] = useState(null);
   const { id } = useParams();
+  const [booking, setBooking] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -26,28 +27,35 @@ const BookingDetail = () => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-center mt-5">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    );
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="text-center mt-5">Error: {error}</div>;
   }
 
   if (!booking) {
-    return <div>No booking found.</div>;
+    return <div className="text-center mt-5">No booking found.</div>;
   }
 
   return (
-    <div>
-      <h2>Booking Details</h2>
-      <p>Title: {booking.title}</p>
-      <p>Description: {booking.description}</p>
-      <p>Date: {booking.date}</p>
-      <p>Location: {booking.location}</p>
-      <p>Budget: {booking.budget}</p>
-      <p>Created By: {booking.createdBy}</p>
-      <p>Created At: {booking.createdAt}</p>
-      <p>Status: {booking.status}</p>
+    <div className="container mt-5">
+      <div className="booking-details">
+        <p><strong>Booking ID:</strong> {booking._id}</p>
+        <p><strong>User:</strong> {booking.userId ? `${booking.userId.username} (${booking.userId.email})` : 'Unknown'}</p>
+        <p><strong>Event:</strong> {booking.eventId ? booking.eventId.title : 'Unknown'}</p>
+        <p><strong>Vendor:</strong> {booking.vendorId ? booking.vendorId.name : 'Unknown'}</p>
+        <p><strong>Status:</strong> {booking.status}</p>
+        <p><strong>Booking Date:</strong> {new Date(booking.bookingDate).toLocaleDateString()}</p>
+        <p><strong>Created At:</strong> {new Date(booking.createdAt).toLocaleDateString()}</p>
+        {/* Add additional details as needed */}
+      </div>
     </div>
   );
 };

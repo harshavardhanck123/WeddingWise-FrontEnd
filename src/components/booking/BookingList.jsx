@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Table, Alert, Container, Spinner, DropdownButton, Dropdown } from 'react-bootstrap';
+import { jwtDecode } from 'jwt-decode';
 import bookingServices from '../../services/bookingServices';
-import {jwtDecode} from 'jwt-decode';
-import '../../styles/BookingList.css'
+import '../../styles/BookingList.css';
+
 const BookingList = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,7 +27,7 @@ const BookingList = () => {
           setBookings(fetchedBookings);
         } else {
           // Regular user sees only their bookings
-          const filteredBookings = fetchedBookings.filter(booking => booking.userId === userId);
+          const filteredBookings = fetchedBookings.filter(booking => booking.userId && booking.userId._id === userId);
           setBookings(filteredBookings);
         }
 
@@ -38,50 +41,89 @@ const BookingList = () => {
 
     fetchBookings();
   }, [isAdmin]);
+
+  const handleStatusChange = async (id, status) => {
+    try {
+      await bookingServices.updateBooking(id, { status });
+      // Optionally, update state or re-fetch data
+      fetchBookings(); // Assuming fetchBookings function fetches and updates state
+    } catch (error) {
+      console.error('Error updating booking status:', error);
+      setError('Failed to update booking status');
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm('Are you sure you want to delete this booking?')) {
+      try {
+        await bookingServices.deleteBooking(id);
+        setBookings(bookings.filter(booking => booking._id !== id));
+      } catch (error) {
+        console.error('Error deleting booking:', error);
+        setError('Failed to delete booking');
+      }
+    }
+  };
+
   return (
-    <div className="container mt-5">
-      <h2 className="text-center mb-4">All Bookings</h2>
+    <Container className="mt-5">
       {loading ? (
-        <p className="text-center">Loading bookings...</p>
+        <div className="text-center">
+          <Spinner animation="border" />
+          <p>Loading bookings...</p>
+        </div>
       ) : (
         <div className="table-responsive">
-          <table className="table table-bordered">
+          <Table bordered>
             <thead>
               <tr>
                 <th>Booking ID</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Location</th>
-                <th>Budget</th>
-                {/* Add other headers as needed */}
+                <th>User</th>
+                <th>Event</th>
+                <th>Vendor</th>
+                <th>Status</th>
+                <th>Booking Date</th>
+                <th>Created At</th>
+                <th>Actions</th>
+                <th>Booking Details</th> {/* New column for booking details button */}
               </tr>
             </thead>
             <tbody>
               {bookings.length === 0 ? (
                 <tr>
-                  <td colSpan="6" className="text-center">No bookings found.</td>
+                  <td colSpan="9" className="text-center">No bookings found.</td>
                 </tr>
               ) : (
                 bookings.map(booking => (
                   <tr key={booking._id}>
                     <td>{booking._id}</td>
-                    <td>{booking.title}</td>
-                    <td>{booking.description}</td>
-                    <td>{booking.date}</td>
-                    <td>{booking.location}</td>
-                    <td>{booking.budget}</td>
-                    {/* Render other data cells as needed */}
+                    <td>{booking.userId ? `${booking.userId.username} (${booking.userId.email})` : 'Unknown'}</td>
+                    <td>{booking.eventId ? booking.eventId.title : 'Unknown'}</td>
+                    <td>{booking.vendorId ? booking.vendorId.name : 'Unknown'}</td>
+                    <td>{booking.status}</td>
+                    <td>{new Date(booking.bookingDate).toLocaleDateString()}</td>
+                    <td>{new Date(booking.createdAt).toLocaleDateString()}</td>
+                    <td>
+                      <DropdownButton id="dropdown-basic-button" title="Change Status" size="sm" className="me-2 mb-2">
+                        <Dropdown.Item onClick={() => handleStatusChange(booking._id, 'pending')}>Pending</Dropdown.Item>
+                        <Dropdown.Item onClick={() => handleStatusChange(booking._id, 'confirmed')}>Confirmed</Dropdown.Item>
+                        <Dropdown.Item onClick={() => handleStatusChange(booking._id, 'completed')}>Completed</Dropdown.Item>
+                      </DropdownButton>
+                      <Button variant="danger" size="sm" onClick={() => handleDelete(booking._id)}>Delete</Button>
+                    </td>
+                    <td> {/* Booking details button */}
+                      <Button as={Link} to={`/bookings/${booking._id}`} size="sm">Details</Button>
+                    </td>
                   </tr>
                 ))
               )}
             </tbody>
-          </table>
+          </Table>
         </div>
       )}
       {error && <p className="text-center text-danger">{error}</p>}
-    </div>
+    </Container>
   );
-};;
+};
 
 export default BookingList;

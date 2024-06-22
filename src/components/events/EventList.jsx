@@ -45,8 +45,7 @@ const EventList = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  const isAdmin = localStorage.getItem('role') === 'admin';
 
   return (
     <div className="event-list">
@@ -85,7 +84,7 @@ const EventList = () => {
               />
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Button type="submit" className='search-form-button'>
+              <Button type="submit" className="search-form-button">
                 Search
               </Button>
             </Grid>
@@ -93,6 +92,13 @@ const EventList = () => {
         </form>
       </div>
       <Container>
+        {isAdmin && (
+          <Grid container justifyContent="flex-end" className="create-event-button-container">
+            <Button component={Link} to="/events/create" variant="contained" color="primary">
+              Create Event
+            </Button>
+          </Grid>
+        )}
         {events.length === 0 ? (
           <p>No events found</p>
         ) : (
