@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import './styles/Header.css'
+import './styles/Header.css';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
           <Link className="navbar-brand" id="Hover" to="/">
             WeddingWise
@@ -37,22 +37,22 @@ const Header = () => {
               {isAuthenticated && (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" to={`/users/profile/${id}`} >
+                    <Link className="nav-link" to={`/users/profile/${id}`}>
                       Profile
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/events" >
+                    <Link className="nav-link" to="/events">
                       Events
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/vendors" >
+                    <Link className="nav-link" to="/vendors">
                       Vendors
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/budgets" >
+                    <Link className="nav-link" to="/budgets">
                       Budgets
                     </Link>
                   </li>
@@ -80,10 +80,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <button
-                      className="btn btn-logout"
-                      onClick={handleLogout}
-                    >
+                    <button className="btn btn-logout" onClick={handleLogout}>
                       Logout
                     </button>
                   </li>
