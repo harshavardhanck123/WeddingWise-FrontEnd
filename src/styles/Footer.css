@@ -1,0 +1,19 @@
+.footer {
+  background-color: #343a40; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 10px 0; /* Padding for content */
+  text-align: center; /* Center align text */
+}
+
+.footer p {
+  margin: 0; /* Removes default paragraph margins */
+}
+
+.footer a {
+  color: #f8f9fa; /* Light color for links */
+  text-decoration: none; /* No underline for links */
+}
+
+.footer a:hover {
+  color: #d3d3d3; /* Lighter color on hover */
+}

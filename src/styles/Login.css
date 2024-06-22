@@ -1,0 +1,42 @@
+/* Login.css */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffe6f0; /* Light pink background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #ff69b4; /* Pink color for heading */
+}
+
+.login-form .form-group {
+  margin-bottom: 15px;
+}
+
+.login-form label {
+  color: #ff69b4; /* Pink color for labels */
+}
+
+.login-form .form-control {
+  border: 1px solid #ff69b4; /* Pink border for input fields */
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #ff69b4; /* Pink background for button */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #ff85c1; /* Lighter pink on hover */
+}
+
+.text-danger {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}

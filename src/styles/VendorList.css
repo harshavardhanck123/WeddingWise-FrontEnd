@@ -1,0 +1,106 @@
+/* VendorList.css */
+
+.vendor-list-container {
+  background-color: #ffe6f0; /* Set the theme color as the background */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.card {
+  background-color: #ffffff; /* White background for cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #f0f0f0; /* Light border color */
+  border-radius: 10px; /* Rounded corners for cards */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333333; /* Dark text color */
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666666; /* Medium gray text color */
+  margin-bottom: 20px;
+}
+
+.card-body .btn {
+  flex: 1;
+  margin: 5px;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #ff7eb9; /* Pinkish theme color for primary buttons */
+  border-color: #ff7eb9;
+  transition: background-color 0.3s, border-color 0.3s;
+  color: #ffffff; /* White text color */
+}
+
+.btn-primary:hover {
+  background-color: #ff4d94; /* Darker shade on hover */
+  border-color: #ff4d94;
+}
+
+.btn-secondary {
+  background-color: #e066b0; /* Lighter shade for secondary buttons */
+  border-color: #e066b0;
+  transition: background-color 0.3s, border-color 0.3s;
+  color: #ffffff; /* White text color */
+}
+
+.btn-secondary:hover {
+  background-color: #d655a4; /* Darker shade on hover */
+  border-color: #d655a4;
+}
+
+.mt-4 {
+  margin-top: 2rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 2rem !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.py-4 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* Theme color for card headers */
+.card-header {
+  background-color: #ffe6f0; /* Theme color for card headers */
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Border color for active and hovered cards */
+.card.active,
+.card:hover {
+  border-color: #ff7eb9; /* Pinkish border color */
+}

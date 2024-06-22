@@ -1,0 +1,121 @@
+
+.jumbotron {
+  background-color: #ffe6f0;
+  padding: 50px 20px;
+
+  margin-bottom: 30px;
+}
+#inputform{
+margin: 10px 10px 10px;
+}
+.feature-box,
+.feature-box1 {
+  
+  background-color: #fff;
+  border: 1px solid #ff69b4;
+  border-radius: 10px;
+  height:100%;
+  padding: 20px;
+  margin: 10px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.imgbord {
+  border-radius: 10px;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
+}
+
+.feature-icon {
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.feature-box h3,
+.feature-box1 h2 {
+  color: #ff69b4;
+  margin-top: 10px;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.text-center h1 {
+  color: #ff69b4;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group .form-control {
+  margin-bottom: 1rem;
+}
+
+.btn-outline-secondary {
+  border-color: #ff69b4;
+  color: #ff69b4;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #ff69b4;
+  color: white;
+}
+.contactus{
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ff69b4;
+  border-radius: 5px;
+  margin-bottom: 0; /* Ensure consistent alignment */
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  color: #ff69b4;
+}
+
+.search-button {
+  padding: 10px 20px;
+  border: 1px solid #ff69b4;
+  border-radius: 5px;
+  color: #ff69b4;
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Make the button height consistent with inputs */
+}
+
+.search-button:hover {
+  background-color: #ff69b4;
+  color: white;
+}

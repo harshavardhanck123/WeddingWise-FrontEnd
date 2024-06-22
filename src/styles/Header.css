@@ -1,0 +1,49 @@
+/* Header.css */
+
+.header {
+  background-color: rgb(255, 105, 180); /* Pink background color */
+  color: white; /* Text color */
+  padding: 15px 0; /* Top and bottom padding */
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Larger font size for brand */
+}
+
+.nav-link {
+  margin-right: 10px; /* Right margin between links */
+  transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+.nav-link:hover {
+  color: black; /* Black text color on hover */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+
+.navbar-collapse {
+  justify-content: flex-end; /* Align navigation links to the right */
+}
+
+.btn-logout {
+  background-color: #dc3545; /* Red background color for logout button */
+  color: white; /* White text color for logout button */
+  border: none; /* Remove border */
+  margin-left: 10px; /* Left margin */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for button */
+}
+
+.btn-logout:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack navigation links vertically on smaller screens */
+  }
+
+  .nav-link {
+    margin-right: 0; /* Remove margin between stacked links */
+    margin-bottom: 10px; /* Add space between stacked links */
+  }
+}
