@@ -51,7 +51,7 @@ const EventList = () => {
     <div className="event-list">
       <div className="search-form-inner">
         <form onSubmit={handleSearch} className="search-form">
-          <Grid container spacing={2} justifyContent="center">
+          <Grid container spacing={2} alignItems="center">
             <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
@@ -83,18 +83,19 @@ const EventList = () => {
                 onChange={(e) => setLocation(e.target.value)}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <div className="search-button-container">
               <Button type="submit" className="search-form-button">
                 Search
               </Button>
-            </Grid>
+            </div>
+
           </Grid>
         </form>
       </div>
       <Container>
         {isAdmin && (
           <Grid container justifyContent="flex-end" className="create-event-button-container">
-            <Button component={Link} to="/events/create" variant="contained" color="primary">
+            <Button component={Link} to="/events/create" >
               Create Event
             </Button>
           </Grid>

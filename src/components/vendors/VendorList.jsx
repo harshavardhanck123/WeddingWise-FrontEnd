@@ -50,7 +50,7 @@ const VendorList = () => {
               <div className="d-flex justify-content-between">
                 {role === 'admin' ? (
                   <>
-                    <Button variant="primary" onClick={() => addToCart(vendor._id)}>Add to MyVendors</Button>
+                  <Button variant="primary" onClick={() => goToVendorDetails(vendor._id)}>Vendor Details</Button>
                   </>
                 ) : (
                   <>

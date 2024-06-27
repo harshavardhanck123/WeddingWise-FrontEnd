@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import eventServices from '../../services/eventServices';
+import '../../styles/EventDetail.css'; // Import CSS file for custom styling
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt, faMapMarkerAlt, faMoneyBillAlt, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const EventDetail = () => {
   const { id } = useParams();
@@ -25,22 +28,38 @@ const EventDetail = () => {
   }, [id]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className="text-center mt-4">Loading...</p>;
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
+    return <p className="text-center mt-4">Error: {error}</p>;
   }
 
   return (
-    <div>
+    <div className="container d-flex justify-content-center align-items-center vh-100">
       {event ? (
-        <div>
-          <h2>{event.name}</h2>
-          <p>Date: {event.date}</p>
-          <p>Description: {event.description}</p>
-          <p>Location: {event.location}</p>
-          <p>Budget: {event.budget}</p>
+        <div className="card">
+          <div className="card-body">
+            <h2 className="card-title">{event.title}</h2>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">
+                <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
+                <span className="ml-2">Date: {event.date}</span>
+              </li>
+              <li className="list-group-item">
+                <FontAwesomeIcon icon={faInfoCircle} className="icon" />
+                <span className="ml-2">Description: {event.description}</span>
+              </li>
+              <li className="list-group-item">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" />
+                <span className="ml-2">Location: {event.location}</span>
+              </li>
+              <li className="list-group-item">
+                <FontAwesomeIcon icon={faMoneyBillAlt} className="icon" />
+                <span className="ml-2">Budget: {event.budget}</span>
+              </li>
+            </ul>
+          </div>
         </div>
       ) : (
         <p>No event found.</p>

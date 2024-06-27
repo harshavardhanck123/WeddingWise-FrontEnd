@@ -1,0 +1,60 @@
+/* EditProfile.css */
+
+/* Container styling */
+.container-fluid {
+    background-color: #f0f0f0; /* Light background color */
+    min-height: 100vh; /* Minimum full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Card styling */
+  .edit-profile-card {
+    width: 100%;
+    max-width: 800px; /* Adjust maximum width as needed */
+    background-color: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-profile-card .card-body {
+    padding: 30px;
+  }
+  
+  .edit-profile-card .card-title {
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  
+  /* Form styling */
+  .form-label {
+    font-weight: 500;
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #dc3545; /* Bootstrap's danger color */
+    margin-top: 10px;
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    background-color: #007bff; /* Bootstrap's primary color */
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9; /* Darker shade on hover */
+  }
+  
+  .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); /* Focus state */
+  }
+  

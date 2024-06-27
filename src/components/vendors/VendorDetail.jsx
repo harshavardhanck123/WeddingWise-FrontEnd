@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import vendorServices from '../../services/vendorServices';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import '../../styles/VendorDetail.css'; // Import CSS file for custom styling
 
 const VendorDetail = () => {
   const { id } = useParams();
@@ -24,19 +27,27 @@ const VendorDetail = () => {
   };
 
   if (loading) {
-    return <p>Loading vendor details...</p>;
+    return <p className="text-center mt-4">Loading vendor details...</p>;
   }
 
   if (!vendor) {
-    return <p>Vendor details not found.</p>;
+    return <p className="text-center mt-4">Vendor details not found.</p>;
   }
 
   return (
-    <div>
-      <p>Name: {vendor.name}</p>
-      <p>Service Type: {vendor.serviceType}</p>
-      <p>Contact Details: {vendor.contactDetails.phone}, {vendor.contactDetails.email}</p>
-      {/* Add more details as needed */}
+    <div className="vendor-details-container">
+      <h2 className="vendor-name">{vendor.name}</h2>
+      <div className="vendor-info">
+        <p>
+          <FontAwesomeIcon icon={faPhone} className="icon" />
+          <strong>Phone:</strong> {vendor.contactDetails.phone}
+        </p>
+        <p>
+          <FontAwesomeIcon icon={faEnvelope} className="icon" />
+          <strong>Email:</strong> {vendor.contactDetails.email}
+        </p>
+        {/* Add more details as needed */}
+      </div>
     </div>
   );
 };

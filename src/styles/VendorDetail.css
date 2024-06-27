@@ -1,0 +1,56 @@
+/* VendorDetail.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+    color: #333; /* Dark text color */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .vendor-details-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .vendor-name {
+    font-family: 'Montserrat', sans-serif; /* Example: Montserrat font */
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333; /* Dark text color */
+  }
+  
+  .vendor-info {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Lighter background color */
+    border: 1px solid #e0e0e0; /* Light border color */
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vendor-info p {
+    margin-bottom: 10px;
+  }
+  
+  .vendor-info p strong {
+    font-weight: bold;
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+
+  

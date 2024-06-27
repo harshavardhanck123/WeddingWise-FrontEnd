@@ -1,0 +1,29 @@
+/* EventDetail.css */
+
+.card {
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .list-group-item {
+    border-color: rgba(0, 0, 0, 0.125);
+  }
+  
+  .icon {
+    color: #007bff; /* Adjust color as needed */
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  

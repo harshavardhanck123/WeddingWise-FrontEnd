@@ -7,13 +7,13 @@ const AllUsers = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const res = await userServices.getAllUsers();
-        setUsers(res); // Assuming res.data contains the users array
+        setUsers(res);
       } catch (error) {
         setError('Error fetching users');
         console.error('Error fetching users:', error);
@@ -26,7 +26,7 @@ const AllUsers = () => {
   }, []);
 
   const handleEdit = (userId) => {
-    navigate(`/users/edit/${userId}`)
+    navigate(`/users/edit/${userId}`);
     console.log('Edit user:', userId);
   };
 
@@ -43,32 +43,47 @@ const AllUsers = () => {
     return <div className="error text-center">{error}</div>;
   }
 
- 
-  
   return (
-    <div className="container-fluid mt-5">
+    <div className="all-users-container mt-5">
       <div className="row justify-content-center">
-        <div className="col-lg-8">
+        <div className="col-lg-10">
           <div className="card user-card">
             <div className="card-header bg-custom text-white">
               <h2 className="text-center mb-0">All Users</h2>
             </div>
             <div className="card-body user-list-container">
               {users.length > 0 ? (
-                <ul className="list-group user-list">
-                  {users.map(user => (
-                    <li key={user._id} className="list-group-item d-flex justify-content-between align-items-center">
-                      <div className="user-info">
-                        <span>{user.username}</span>
-                        <span>({user.email})</span>
-                      </div>
-                      <div className="user-actions">
-                        <button className="btn btn-custom me-2" onClick={() => handleEdit(user._id)}>Edit</button>
-                        <button className="btn btn-danger" onClick={() => handleDelete(user._id)}>Delete</button>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                <table className="table table-striped table-hover">
+                  <thead className="table-dark">
+                    <tr>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {users.map((user) => (
+                      <tr key={user._id}>
+                        <td>{user.username}</td>
+                        <td>{user.email}</td>
+                        <td>
+                          <button
+                            className="btn btn-custom me-2"
+                            onClick={() => handleEdit(user._id)}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            className="btn btn-danger"
+                            onClick={() => handleDelete(user._id)}
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               ) : (
                 <p className="text-center">No users available.</p>
               )}
@@ -79,4 +94,5 @@ const AllUsers = () => {
     </div>
   );
 };
+
 export default AllUsers;

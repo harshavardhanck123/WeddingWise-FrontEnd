@@ -1,0 +1,24 @@
+/* BudgetDetail.css */
+
+.budget-card {
+    width: 100%;
+    max-width: 600px; /* Adjust maximum width as needed */
+    background-color: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .budget-table {
+    width: 100%;
+  }
+  
+  .icon {
+    margin-right: 8px;
+  }
+  
+  .text-center {
+    text-align: center;
+    margin-top: 10px;
+  }
+  

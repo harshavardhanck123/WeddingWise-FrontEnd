@@ -48,23 +48,23 @@ const BudgetList = () => {
         <div className="table-responsive">
           <Table striped bordered hover>
             <thead>
-              <tr>
-                <th>#</th>
-                <th>Event ID</th>
+              <tr className="text-center">
+                <th>S.No</th>
+                <th>Event Title</th>
                 <th>Category</th>
                 <th>Amount</th>
                 <th>Actions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-center">
               {budgets.map((budget, index) => (
                 <tr key={budget._id}>
                   <td>{index + 1}</td>
-                  <td>{budget.eventId}</td>
+                  <td>{budget.title}</td>
                   <td>{budget.category}</td>
                   <td>{budget.amount}</td>
                   <td className="actions">
-                    <Button className="btn-transparent" as={Link} to={`/budget/${budget._id}`}>View</Button>
+                    <Button className="btn-transparent" as={Link} to={`/budgets/${budget._id}`}>View</Button>
                     <Button className="btn-transparent" onClick={() => handleDeleteBudget(budget._id)}>Delete</Button>
                   </td>
                 </tr>

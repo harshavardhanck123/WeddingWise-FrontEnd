@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import eventServices from '../../services/eventServices';
+import '../../styles/CreateEvent.css'; // Import CSS for custom styling
 
 const CreateEvent = () => {
   const [name, setName] = useState('');
@@ -20,7 +21,7 @@ const CreateEvent = () => {
     setSuccess(false);
 
     try {
-      const eventData = { name, date, description, location, budget }; // Corrected object keys
+      const eventData = { name, date, description, location, budget };
       const data = await eventServices.createEvent(eventData);
       console.log('Event created:', data);
 
@@ -41,37 +42,36 @@ const CreateEvent = () => {
   };
 
   return (
-    <div>
+    <div className="create-event-container">
       <h2>Create Event</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+      <form onSubmit={handleSubmit} className="create-event-form">
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
         </div>
-        <div>
-          <label>Date</label>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+        <div className="form-group">
+          <label htmlFor="date">Date</label>
+          <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} required />
         </div>
-        <div>
-          <label>Description</label>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} required></textarea>
+        <div className="form-group">
+          <label htmlFor="description">Description</label>
+          <textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} required></textarea>
         </div>
-        <div>
-          <label>Location</label>
-          <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} required />
+        <div className="form-group">
+          <label htmlFor="location">Location</label>
+          <input type="text" id="location" value={location} onChange={(e) => setLocation(e.target.value)} required />
         </div>
-        <div>
-          <label>Budget</label>
-          <input type="text" value={budget} onChange={(e) => setBudget(e.target.value)} required />
+        <div className="form-group">
+          <label htmlFor="budget">Budget</label>
+          <input type="text" id="budget" value={budget} onChange={(e) => setBudget(e.target.value)} required />
         </div>
-        <button type="submit">Create Event</button>
+        <button type="submit" className="btn-submit">Create Event</button>
         {loading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {success && <p>Event created successfully!</p>}
+        {error && <p className="error-message">Error: {error}</p>}
+        {success && <p className="success-message">Event created successfully!</p>}
       </form>
     </div>
   );
 };
 
 export default CreateEvent;
-  

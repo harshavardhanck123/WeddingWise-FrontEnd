@@ -62,7 +62,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <div className="jumbotron text-center">
+      <div className="jumbotron text-center mt-0">
         
         <h1>Welcome to WeddingWise</h1>
         <p>Plan your wedding with ease!</p>

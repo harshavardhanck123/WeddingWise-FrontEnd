@@ -1,13 +1,13 @@
-
-
 import React, { useState, useEffect } from 'react';
-import { useParams,useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import userServices from '../../services/userServices';
-import '../../styles/EditProfile.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faUserTag } from '@fortawesome/free-solid-svg-icons';
+import '../../styles/EditProfile.css'; // Import CSS file for custom styling
 
 const EditProfile = () => {
   const { id } = useParams(); // Assuming id is passed as a parameter
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: '',
     role: '',
@@ -53,33 +53,54 @@ const EditProfile = () => {
   };
 
   return (
-    <div>
-      <h2>Edit Profile</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Role:
-          <input
-            type="text"
-            name="role"
-            value={formData.role}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        {/* Add more form fields as needed */}
-        <button type="submit">Update Profile</button>
-        {error && <p style={{ color: 'red' }}>Error: {error}</p>}
-      </form>
+    <div className="container-fluid  ">
+      <div className="row">
+        <div className="col-md-6">
+          <div className="card edit-profile-card">
+            <div className="card-body">
+            <h3 className="card-title">Edit Profile</h3>
+              <form onSubmit={handleSubmit} className="row g-3">
+                <div className="col-md-12">
+                  <label htmlFor="username" className="form-label">
+                    <FontAwesomeIcon icon={faUser} className="icon" />
+                    Username:
+                  </label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    className="form-control"
+                  />
+                </div>
+                <div className="col-md-12">
+                  <label htmlFor="role" className="form-label">
+                    <FontAwesomeIcon icon={faUserTag} className="icon" />
+                    Role:
+                  </label>
+                  <input
+                    type="text"
+                    id="role"
+                    name="role"
+                    value={formData.role}
+                    onChange={handleChange}
+                    className="form-control"
+                  />
+                </div>
+                <div className="col-12">
+                  <button type="submit" className="btn btn-primary">Update Profile</button>
+                </div>
+                {error && (
+                  <div className="col-12">
+                    <p className="error-message">Error: {error}</p>
+                  </div>
+                )}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
