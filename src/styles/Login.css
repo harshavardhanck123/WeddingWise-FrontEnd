@@ -13,7 +13,7 @@ h2 {
   color: #ff69b4; /* Pink color for heading */
 }
 #login-img {
-  width: auto;
+  width:500px;
   height: auto;
 }
 .login-form .form-group {
