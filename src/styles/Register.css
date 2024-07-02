@@ -1,28 +1,31 @@
 /* src/styles/Register.css */
-.register-container {
-    max-width: 400px;
-    margin: 35px auto;
-    padding: 10px;
-    background-color: #ffe6f0; /* Light pink background */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    text-align: center;
-    color: #ff69b4; /* Pink color for heading */
-  }
+
+.register-container{
+  margin: 80px 20px 20px 20px;
+}
   
   .register-form .form-group {
     margin-bottom: 15px;
   }
   
-  .register-form label {
-    color: #ff69b4; /* Pink color for labels */
+  .register-btn{
+    border: none;
+    color: white;
+    background-color: #E72E77;
+   
+    text-align: center;
+    text-decoration: none;
+    height: 40px;
+    width:250px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 140px;
+    cursor: pointer;
+    border-radius: 10px;
   }
   
   .register-form .form-control {
-    border: 1px solid #ff69b4; /* Pink border for input fields */
+    border: 1px solid black; /* Pink border for input fields */
     border-radius: 5px;
   }
   

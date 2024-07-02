@@ -37,13 +37,13 @@ const App = () => {
         <Route path="/users/profile/:id" element={<PrivateRoute><Profile /></PrivateRoute>} />
         <Route path="/users/edit/:id" element={<PrivateRoute><EditProfile /></PrivateRoute>} />
         <Route path="/allUsers" element={<PrivateRoute><AllUsers /></PrivateRoute>} />
-        <Route path="/events" element={<PrivateRoute><EventList /></PrivateRoute>} />
+        <Route path="/events" element={<EventList />} />
         <Route path="/events/create" element={<PrivateRoute><CreateEvent /></PrivateRoute>} />
         <Route path="/events/:id" element={<PrivateRoute><EventDetail /></PrivateRoute>} />
-        <Route path="/vendors" element={<PrivateRoute><VendorList /></PrivateRoute>} />
+        <Route path="/vendors" element={<VendorList />} />
         <Route path="/vendors/create" element={<PrivateRoute><CreateVendor /></PrivateRoute>} />
         <Route path="/vendors/:id" element={<PrivateRoute><VendorDetail /></PrivateRoute>} />
-        <Route path="/budgets" element={<PrivateRoute><BudgetList /></PrivateRoute>} />
+        <Route path="/budgets" element={<BudgetList />} />
         <Route path="/budgets/create" element={<PrivateRoute><CreateBudget /></PrivateRoute>} />
         <Route path="/budgets/:id" element={<PrivateRoute><BudgetDetail /></PrivateRoute>} />
         <Route path="/bookings" element={<PrivateRoute><BookingList /></PrivateRoute>} />

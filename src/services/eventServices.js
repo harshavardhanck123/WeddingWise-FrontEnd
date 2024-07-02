@@ -1,9 +1,9 @@
-import { protectedInstance } from "./instance";
+import { protectedInstance,instance } from "./instance";
 
 const eventServices = {
     getEvents: async () => {
         try {
-            const response = await protectedInstance.get('/events');
+            const response = await instance.get('/events');
             return response.data;
         } catch (error) {
             throw new Error(error.response.data.error || 'Failed to fetch events');

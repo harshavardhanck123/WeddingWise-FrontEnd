@@ -1,9 +1,28 @@
 
 .jumbotron {
-  background-color: #ffe6f0;
+  background-color:#e090b0;
   padding: 50px 20px;
 
   margin-bottom: 30px;
+}
+.linked{
+  text-decoration: 'none' ;
+}
+.welcome{
+  background-image: url("https://res.cloudinary.com/de0mhfxog/image/upload/v1719913037/vym8z8tnbmzzbgkaxhq0.jpg");
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 230px;
+  padding-left: 100px;
+  padding-right: 100px;
+color: white;
+  top: 0;
+  left: 0;
+
+  box-shadow: 0 0 40000px rgba(0, 0, 0, 0.9) inset;
 }
 #inputform{
 margin: 10px 10px 10px;
@@ -11,8 +30,8 @@ margin: 10px 10px 10px;
 .feature-box,
 .feature-box1 {
   
-  background-color: #fff;
-  border: 1px solid #ff69b4;
+  background-color: white;
+  border: 1px solid #E72E77;
   border-radius: 10px;
   height:100%;
   padding: 20px;
@@ -29,13 +48,14 @@ margin: 10px 10px 10px;
 }
 
 .feature-icon {
-  color: #ff69b4;
+  color:#E72E77;
   margin-bottom: 10px;
 }
 
-.feature-box h3,
-.feature-box1 h2 {
-  color: #ff69b4;
+
+
+.feature-box1 h3 {
+  color: #E72E77;
   margin-top: 10px;
 }
 
@@ -53,9 +73,7 @@ img.img-fluid {
   border-radius: 10px;
 }
 
-.text-center h1 {
-  color: #ff69b4;
-}
+
 
 .input-group {
   margin-bottom: 1.5rem;

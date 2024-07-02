@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import userServices from '../../services/userServices';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import '../../styles/Register.css'; // Importing CSS file for styling
 
 const Register = () => {
@@ -34,8 +34,21 @@ const Register = () => {
   };
 
   return (
+    <div className="container">
+      <div className="row">
+        <div className="col">
+        <img id="login-img"src="https://res.cloudinary.com/de0mhfxog/image/upload/v1719917133/spsnddctvysdxmrsntdj.jpg" alt=".."></img>
+        </div>
+        <div className="col">
+          
     <div className="register-container">
-      <h2>Register</h2>
+      <h3>Register</h3>
+   
+            <p>Already have an account? <span><Link to="/login" >
+              Sign In
+            </Link></span></p>
+            
+          
       <form onSubmit={handleSubmit} className="register-form">
         <div className="form-group">
           <label>Username:</label>
@@ -84,10 +97,15 @@ const Register = () => {
             <option value="admin">Admin</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-primary btn-block">Register</button>
+        <button type="submit" className="  register-btn " >Register</button>
         {error && <p className="error-message">{error}</p>}
+        
       </form>
     </div>
+        </div>
+      </div>
+    </div>
+
   );
 };
 

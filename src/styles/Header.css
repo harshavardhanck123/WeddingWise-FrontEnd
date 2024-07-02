@@ -1,18 +1,73 @@
 /* Header.css */
 
 .header {
-  background-color: rgb(255, 105, 180); /* Pink background color */
+  background-color: #E72E77; /* Pink background color */
   color: white; /* Text color */
-  padding: 15px 0; /* Top and bottom padding */
+  height: 50px;
+  
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; /* Ensure elements are spaced apart */
+  align-items: center;
+  color: white;
+  padding: 0 20px; /* Add padding for spacing */
 }
 
 .navbar-brand {
+  color: white;
   font-size: 1.5rem; /* Larger font size for brand */
+}
+.head-login-btn {
+  background-color: #B4245D;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; /* Change display to inline-block */
+  width: 120px; /* Adjust width as per your design */
+  height: 30px;
+  line-height: 30px; /* Center text vertically */
+  cursor: pointer;
+  border-radius: 60px;
+  border: none;
+
+  padding: 0px;
+  
+}
+
+.head-register-btn {
+  background-color: #B4245D;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; /* Change display to inline-block */
+  width: 120px; /* Adjust width as per your design */
+  height: 30px;
+  line-height: 30px; /* Center text vertically */
+  cursor: pointer;
+  border-radius: 60px;
+  border: none;
+  padding: 0px;
+ 
+}
+
+.head-login-btn:hover,
+.head-register-btn:hover {
+  background-color: white;
+  color:#B4245D; /* Change background color on hover */
+}
+
+
+#Hover {
+  color: white;
 }
 
 .nav-link {
   margin-right: 10px; /* Right margin between links */
   transition: color 0.3s ease; /* Smooth transition for link color */
+  color: white; /* Ensure nav link text is white */
 }
 
 .nav-link:hover {
@@ -20,21 +75,28 @@
   text-decoration: none; /* Remove underline on hover */
 }
 
-
 .navbar-collapse {
+  display: flex;
   justify-content: flex-end; /* Align navigation links to the right */
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 10px;
 }
 
 .btn-logout {
-  background-color: #dc3545; /* Red background color for logout button */
-  color: white; /* White text color for logout button */
-  border: none; /* Remove border */
-  margin-left: 10px; /* Left margin */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for button */
-}
-
-.btn-logout:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background: none;
+  border: none;
+  color: white; /* Ensure logout button text is white */
+  cursor: pointer;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
