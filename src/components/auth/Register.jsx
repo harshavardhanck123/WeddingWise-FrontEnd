@@ -37,7 +37,7 @@ const Register = () => {
     <div className="container">
       <div className="row">
         <div className="col">
-        <img id="login-img"src="https://res.cloudinary.com/de0mhfxog/image/upload/v1719917133/spsnddctvysdxmrsntdj.jpg" alt=".."></img>
+        <img id="register-img"src="https://res.cloudinary.com/de0mhfxog/image/upload/v1719917133/spsnddctvysdxmrsntdj.jpg" alt=".."></img>
         </div>
         <div className="col">
           

@@ -7,7 +7,10 @@
   .register-form .form-group {
     margin-bottom: 15px;
   }
-  
+  #register-img{
+    width:500px;
+    height: auto;
+  }
   .register-btn{
     border: none;
     color: white;
