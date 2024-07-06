@@ -20,7 +20,6 @@ const userServices = {
         password,
         role
       });
-      console.log(response.data)
       return response.data;
     } catch (error) {
       throw new Error(error.response.data.error || 'Failed to login user');
@@ -29,7 +28,7 @@ const userServices = {
   getProfile : async () => {
     try {
       const storedId = localStorage.getItem('userId');
-      console.log(storedId)
+
       if (!storedId) {
         throw new Error('Profile id is not defined');
       }

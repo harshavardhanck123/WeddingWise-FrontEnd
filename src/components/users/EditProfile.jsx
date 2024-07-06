@@ -44,7 +44,6 @@ const EditProfile = () => {
     e.preventDefault();
     try {
       await userServices.updateUser(id, formData);
-      console.log('Profile updated successfully');
       navigate(`/users/profile/${id}`); // Redirect to updated profile
     } catch (error) {
       setError(error.message);

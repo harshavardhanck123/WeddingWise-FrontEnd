@@ -35,7 +35,6 @@ const Profile = () => {
         throw new Error('Profile id is not defined');
       }
       await userServices.deleteProfile(id);
-      console.log('Profile deleted successfully');
       navigate('/login');
     } catch (error) {
       setError(error.message);

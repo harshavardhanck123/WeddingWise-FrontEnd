@@ -23,7 +23,6 @@ const CreateEvent = () => {
     try {
       const eventData = { name, date, description, location, budget };
       const data = await eventServices.createEvent(eventData);
-      console.log('Event created:', data);
 
       // Clear form fields
       setName('');

@@ -27,12 +27,12 @@ const AllUsers = () => {
 
   const handleEdit = (userId) => {
     navigate(`/users/edit/${userId}`);
-    console.log('Edit user:', userId);
+
   };
 
   const handleDelete = (userId) => {
     // Handle delete logic here
-    console.log('Delete user:', userId);
+
   };
 
   if (loading) {
