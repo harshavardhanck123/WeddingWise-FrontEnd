@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://127.0.0.1:3001";
+const baseURL = "https://weddingwise-be.onrender.com";
 
 const instance = axios.create({
   baseURL,
