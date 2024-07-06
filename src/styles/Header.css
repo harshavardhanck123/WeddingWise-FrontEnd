@@ -3,8 +3,9 @@
 .header {
   background-color: #E72E77; /* Pink background color */
   color: white; /* Text color */
-  height: 50px;
-  
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar {
@@ -13,6 +14,7 @@
   justify-content: space-between; /* Ensure elements are spaced apart */
   align-items: center;
   color: white;
+  width: 100%;
   padding: 0 20px; /* Add padding for spacing */
 }
 
@@ -20,48 +22,26 @@
   color: white;
   font-size: 1.5rem; /* Larger font size for brand */
 }
-.head-login-btn {
+
+.head-login-btn, .head-register-btn {
   background-color: #B4245D;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block; /* Change display to inline-block */
-  width: 120px; /* Adjust width as per your design */
-  height: 30px;
-  line-height: 30px; /* Center text vertically */
-  cursor: pointer;
-  border-radius: 60px;
-  border: none;
-
-  padding: 0px;
-  
-}
-
-.head-register-btn {
-  background-color: #B4245D;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block; /* Change display to inline-block */
-  width: 120px; /* Adjust width as per your design */
+  width: 100px; /* Adjust width as per your design */
   height: 30px;
   line-height: 30px; /* Center text vertically */
   cursor: pointer;
   border-radius: 60px;
   border: none;
   padding: 0px;
- 
 }
 
 .head-login-btn:hover,
 .head-register-btn:hover {
   background-color: white;
-  color:#B4245D; /* Change background color on hover */
-}
-
-
-#Hover {
-  color: white;
+  color: #B4245D; /* Change background color on hover */
 }
 
 .nav-link {
@@ -102,10 +82,21 @@
 @media (max-width: 768px) {
   .navbar-nav {
     flex-direction: column; /* Stack navigation links vertically on smaller screens */
+    align-items: flex-start;
   }
 
   .nav-link {
     margin-right: 0; /* Remove margin between stacked links */
     margin-bottom: 10px; /* Add space between stacked links */
+  }
+
+  .head-login-btn, .head-register-btn {
+    width: 100%; /* Full width for buttons on smaller screens */
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .btn-logout {
+    text-align: left;
   }
 }

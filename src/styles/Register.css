@@ -1,43 +1,101 @@
-/* src/styles/Register.css */
-
-.register-container{
-  margin: 80px 20px 20px 20px;
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
+  overflow: hidden; /* Prevents scrolling */
 }
-  
-  .register-form .form-group {
-    margin-bottom: 15px;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.col-md-6 {
+  flex: 1;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+#register-img {
+  width: 100%;
+  max-height: 800px; /* Restrict the image height */
+  object-fit: cover;
+
+}
+
+.register-container-inner {
+
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; /* Adjust this value to move the register content down */
+}
+
+.register-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-form .form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.register-form .form-control {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #e72e77;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+h3 {
+  text-align: center;
+  color: #e72e77;
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-danger {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
   }
-  #register-img{
-    width:500px;
+
+  #register-img {
     height: auto;
+    max-height: 200px; /* Reduce the height further for smaller screens */
+    margin-bottom: 20px;
   }
-  .register-btn{
-    border: none;
-    color: white;
-    background-color: #E72E77;
-   
-    text-align: center;
-    text-decoration: none;
-    height: 40px;
-    width:250px;
-    display: inline-block;
-    font-size: 16px;
-    margin: 20px 140px;
-    cursor: pointer;
-    border-radius: 10px;
+
+  .register-container-inner {
+    margin-top: 20px; /* Adjust this value for smaller screens */
   }
-  
-  .register-form .form-control {
-    border: 1px solid black; /* Pink border for input fields */
-    border-radius: 5px;
-  }
-  
-  .btn-primary {
-    background-color: #ff69b4; /* Pink background for button */
-    border: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #ff85c1; /* Lighter pink on hover */
-  }
-  
+}

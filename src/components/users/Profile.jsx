@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import userServices from '../../services/userServices';
 import '../../styles/Profile.css';
 
 const Profile = () => {
   const navigate = useNavigate();
+  const { id } = useParams(); // Get userId from route parameters
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,11 +13,10 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const storedId = localStorage.getItem('userId');
-        if (!storedId) {
+        if (!id) {
           throw new Error('Profile id is not defined');
         }
-        const data = await userServices.getProfile(storedId);
+        const data = await userServices.getProfile(id);
         setProfile(data);
         setLoading(false);
       } catch (error) {
@@ -26,17 +26,15 @@ const Profile = () => {
       }
     };
 
-    fetchProfile(); // Call fetchProfile directly in useEffect
-
-  }, []);
+    fetchProfile();
+  }, [id]);
 
   const handleDelete = async () => {
     try {
-      const storedId = localStorage.getItem('userId');
-      if (!storedId) {
+      if (!id) {
         throw new Error('Profile id is not defined');
       }
-      await userServices.deleteProfile(storedId);
+      await userServices.deleteProfile(id);
       console.log('Profile deleted successfully');
       navigate('/login');
     } catch (error) {
@@ -46,9 +44,8 @@ const Profile = () => {
   };
 
   const handleEdit = () => {
-    const storedId = localStorage.getItem('userId');
-    if (storedId) {
-      navigate(`/users/edit/${storedId}`);
+    if (id) {
+      navigate(`/users/edit/${id}`);
     } else {
       setError('Profile id is not defined');
       console.error('Error editing profile: Profile id is not defined');

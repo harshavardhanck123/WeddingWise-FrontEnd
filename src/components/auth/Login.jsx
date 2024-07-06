@@ -28,22 +28,21 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="login-container">
       <div className="row">
-        <div className="col-6">
+        <div className="col-md-6 col-12">
           <img
             id="login-img"
             src="https://res.cloudinary.com/de0mhfxog/image/upload/v1719939552/weddingwise/rr67iq5yo0ssc8hqqwnu.jpg"
-            alt=".."
-          ></img>
+            alt="Login"
+          />
         </div>
-        <div className="col-6">
+        <div className="col-md-6 col-12">
           <div className="login-div">
             <h3 className="text-center">Login</h3>
             <div className="form-group">
               <p className="text-center">
-                
-                Not have any account?
+                Not have any account?{" "}
                 <span>
                   <Link to="/register">Sign Up</Link>
                 </span>
@@ -72,7 +71,7 @@ const Login = () => {
                   className="form-control"
                 />
               </div>
-              <button type="submit" className="  login-btn " disabled={loading}>
+              <button type="submit" className="login-btn" disabled={loading}>
                 {loading ? "Logging in..." : "Login"}
               </button>
               {error && <p className="text-danger">{error}</p>}

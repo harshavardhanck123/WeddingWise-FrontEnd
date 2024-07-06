@@ -23,6 +23,7 @@ import Footer from './Footer';
 import EditProfile from './components/users/EditProfile';
 import Header from './Header';
 import MyVendors from './components/vendors/MyVendors';
+import ContactForm from './ContactForm';
 const App = () => {
   const [cart,setCart]=useState([])
   return (
@@ -40,7 +41,7 @@ const App = () => {
         <Route path="/events" element={<EventList />} />
         <Route path="/events/create" element={<PrivateRoute><CreateEvent /></PrivateRoute>} />
         <Route path="/events/:id" element={<PrivateRoute><EventDetail /></PrivateRoute>} />
-        <Route path="/vendors" element={<VendorList />} />
+        <Route path="/vendors"  element={<VendorList cart={cart} setCart={setCart} />} />
         <Route path="/vendors/create" element={<PrivateRoute><CreateVendor /></PrivateRoute>} />
         <Route path="/vendors/:id" element={<PrivateRoute><VendorDetail /></PrivateRoute>} />
         <Route path="/budgets" element={<BudgetList />} />
@@ -50,6 +51,7 @@ const App = () => {
         <Route path="/bookings/create" element={<PrivateRoute><CreateBooking /></PrivateRoute>} />
         <Route path="/bookings/:id" element={<PrivateRoute><BookingDetail /></PrivateRoute>} />
         <Route path="/myvendors" element={<PrivateRoute><MyVendors cart={cart} /></PrivateRoute>} />
+        <Route path="/contact" element={<ContactForm />} />
 
       </Routes>
       </div>

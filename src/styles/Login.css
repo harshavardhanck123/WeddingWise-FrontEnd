@@ -1,59 +1,104 @@
-/* Login.css */
 .login-container {
-  max-width: 400px;
-  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  background-color: #ffe6f0; /* Light pink background */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  overflow: hidden; /* Prevents scrolling */
 }
 
-h2 {
-  text-align: center;
-  color: #ff69b4; /* Pink color for heading */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+.col-md-6 {
+  flex: 1;
+}
+
+.col-12 {
+  width: 100%;
+}
+
 #login-img {
-  width:auto;
-  height: auto;
+  width: 100%;
+  max-height: 800px; /* Restrict the image height */
+  object-fit: cover;
 }
+
+.login-div {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px; /* Adjust this value to move the login content down */
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+}
+
 .login-form .form-group {
   margin-bottom: 15px;
-}
-.login-div{
-  margin: 100px 20px 20px 20px;
-}
-.login-btn{
-  border: none;
-  color: white;
-  background-color: #E72E77;
- 
-  text-align: center;
-  text-decoration: none;
-  height: 40px;
-  width:250px;
-  display: inline-block;
-  font-size: 16px;
-  margin: 20px 140px;
-  cursor: pointer;
-  border-radius: 10px;
+  width: 100%;
 }
 
 .login-form .form-control {
-  border: 1px solid black; /* Pink border for input fields */
+  border: 1px solid black;
   border-radius: 5px;
 }
 
-.btn-primary {
-  background-color: #ff69b4; /* Pink background for button */
+.login-btn {
+  width: 100%;
+  padding: 10px;
   border: none;
+  background-color: #e72e77;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
-.btn-primary:hover {
-  background-color: #ff85c1; /* Lighter pink on hover */
+.login-btn:disabled {
+  background-color: #ff69b4;
+  cursor: not-allowed;
+}
+
+h3 {
+  text-align: center;
+  color: #e72e77;
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-danger {
   color: red;
   text-align: center;
   margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  #login-img {
+    height: auto;
+    max-height: 200px; /* Reduce the height further for smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .login-div {
+    margin-top: 20px; /* Adjust this value for smaller screens */
+  }
 }

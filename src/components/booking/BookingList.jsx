@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Table, Alert, Container, Spinner, DropdownButton, Dropdown } from 'react-bootstrap';
-import { jwtDecode } from 'jwt-decode';
+import {jwtDecode} from 'jwt-decode'; // Correct import statement for jwt-decode
 import bookingServices from '../../services/bookingServices';
 import '../../styles/BookingList.css';
 
@@ -85,7 +85,7 @@ const BookingList = () => {
                 <th>Booking Date</th>
                 <th>Created At</th>
                 <th>Actions</th>
-                <th>Booking Details</th> {/* New column for booking details button */}
+                <th>Booking Details</th>
               </tr>
             </thead>
             <tbody>
@@ -111,7 +111,7 @@ const BookingList = () => {
                       </DropdownButton>
                       <Button variant="danger" size="sm" onClick={() => handleDelete(booking._id)}>Delete</Button>
                     </td>
-                    <td> {/* Booking details button */}
+                    <td>
                       <Button as={Link} to={`/bookings/${booking._id}`} size="sm">Details</Button>
                     </td>
                   </tr>

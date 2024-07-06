@@ -1,0 +1,51 @@
+.testimonial-container {
+  background-color: #e72e77;
+  padding: 50px 0; /* Added padding for spacing */
+  
+}
+
+.heading{
+  color:white;
+}
+
+.custom-carousel {
+  width: 100%;
+}
+
+.testimonial-item {
+  text-align: center;
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensure images fit the circle properly */
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.quote-icon {
+  color: #ff69b4; /* Pink color for quote icons */
+}
+
+.testimonial-text p {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text h5 {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}

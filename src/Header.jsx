@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link, useNavigate,NavLink } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import './styles/Header.css';
+
 
 const Header = () => {
   const navigate = useNavigate();
   const isAuthenticated = !!localStorage.getItem('token');
-  const isAdmin = localStorage.getItem('role') === 'admin'; // Replace with your logic to determine admin status
-  const userId = localStorage.getItem('userId'); // Assume userId is stored in localStorage after login
+  const isAdmin = localStorage.getItem('role') === 'admin';
+  const userId = localStorage.getItem('userId');
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -17,9 +18,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <nav className="navbar navbar-expand-lg">
-        <div className="container">
-          <Link className="navbar-brand" id="Hover" to="/">
+      <nav className="navbar navbar-expand-lg navbar-dark">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/">
             WeddingWise
           </Link>
           <button
@@ -34,37 +35,37 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-                <NavLink className="nav-link" id="Hover" to="/events">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/events">
                   Events
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" id="Hover" to="/vendors">
+                <NavLink className="nav-link" to="/vendors">
                   Vendors
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" id="Hover" to="/budgets">
+                <NavLink className="nav-link" to="/budgets">
                   Budgets
                 </NavLink>
               </li>
               {isAuthenticated && (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" id="Hover" to={`/users/profile/${userId}`}>
+                    <Link className="nav-link" to={`/users/profile/${userId}`}>
                       Profile
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link"  id="Hover" to="/bookings">
+                    <Link className="nav-link" to="/bookings">
                       Bookings
                     </Link>
                   </li>
                   {isAdmin && (
                     <li className="nav-item">
-                      <Link className="nav-link"  id="Hover" to="/allUsers">
+                      <Link className="nav-link" to="/allUsers">
                         Users
                       </Link>
                     </li>
@@ -76,26 +77,26 @@ const Header = () => {
               {isAuthenticated ? (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" id="Hover" to="/bookings/create">
+                    <Link className="nav-link" to="/bookings/create">
                       Create Booking
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <button className="btn btn-logout" id="Hover" onClick={handleLogout}>
+                    <button className="btn btn-logout" onClick={handleLogout}>
                       Logout
                     </button>
                   </li>
                 </>
               ) : (
                 <>
-              <li className="nav-item">
-                    <Link className="nav-link" id="Hover" to="/login">
-                      <button className='head-login-btn'>Login</button>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/login">
+                      <button className="head-login-btn">Login</button>
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" id="Hover" to="/register">
-                      <button className='head-register-btn'>Register</button>
+                    <Link className="nav-link" to="/register">
+                      <button className="head-register-btn">Register</button>
                     </Link>
                   </li>
                 </>

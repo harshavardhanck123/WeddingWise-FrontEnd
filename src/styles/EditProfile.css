@@ -2,7 +2,7 @@
 
 /* Container styling */
 .container-fluid {
-    background-color: #f0f0f0; /* Light background color */
+   
     min-height: 100vh; /* Minimum full viewport height */
     display: flex;
     justify-content: center;
