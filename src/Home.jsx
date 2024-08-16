@@ -16,6 +16,7 @@ import eventServices from "./services/eventServices";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Testimonials.css";
+import Spinner from "./Spinner"; 
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -69,7 +70,7 @@ const Home = () => {
   };
 
   if (loading) {
-    return <div className="home-container">Loading...</div>;
+    return <div className="home-container"><Spinner/></div>;
   }
 
   if (error) {
