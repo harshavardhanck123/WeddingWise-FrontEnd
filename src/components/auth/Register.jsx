@@ -16,13 +16,11 @@ const Register = () => {
     userServices.register(name, email, password, selectedRole)
       .then(response => {
         alert('Registration Successful');
-
         setName('');
         setEmail('');
         setPassword('');
         setSelectedRole('');
         setError('');
-
         setTimeout(() => {
           navigate('/login');
         }, 3000);
@@ -36,14 +34,14 @@ const Register = () => {
   return (
     <div className="register-container">
       <div className="row">
-        <div className="col-md-6 col-12">
+        <div className="col-md-6 d-flex align-items-center justify-content-center">
           <img
             id="register-img"
             src="https://res.cloudinary.com/de0mhfxog/image/upload/v1719917133/spsnddctvysdxmrsntdj.jpg"
             alt=".."
           />
         </div>
-        <div className="col-md-6 col-12">
+        <div className="col-md-6">
           <div className="register-container-inner">
             <h3>Register</h3>
             <p>Already have an account? <span><Link to="/login">Sign In</Link></span></p>

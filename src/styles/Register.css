@@ -1,46 +1,29 @@
-.register-container {
-  
+.register-container-inner {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
-  min-height: 100vh;
-  overflow: hidden; /* Prevents scrolling */
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.col-md-6 {
-  flex: 1;
-}
-
-.col-12 {
-  width: 100%;
+  align-items: center;
+  position: relative; /* Ensure this container is on top */
+  z-index: 1; /* Place it above other elements */
 }
 
 #register-img {
   width: 100%;
-  max-height: 800px; /* Restrict the image height */
+  max-height: 700px; /* Restrict the image height */
   object-fit: cover;
-
+  z-index: 0; /* Ensure image stays behind */
+  position: relative;
 }
 
-.register-container-inner {
-
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px; /* Adjust this value to move the register content down */
+.register-form .form-control {
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 1; /* Ensure input fields are above everything else */
+  position: relative;
 }
+
 
 .register-form {
   width: 100%;
@@ -85,20 +68,4 @@ h3 {
   color: red;
   text-align: center;
   margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-  }
-
-  #register-img {
-    height: auto;
-    max-height: 200px; /* Reduce the height further for smaller screens */
-    margin-bottom: 20px;
-  }
-
-  .register-container-inner {
-    margin-top: 20px; /* Adjust this value for smaller screens */
-  }
 }
